@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+a {
+  font-size: 100%;
+  text-decoration: none;
+}
+
+body {
+  line-height: 1;
+  background-color: var(--background);
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+:root {
+  --primary-color: hsl(262, 83%, 58%);
+  --primary-color-light: hsl(262, 83%, 68%);
+  --primary-color-extra-light: hsla(262, 83%, 78%, 0.2);
+  --primary-color-dark: hsl(262, 83%, 48%);
+  --background: hsl(0, 0%, 15%);
+  --background-light: hsl(0, 0%, 25%);
+}
+
+.navbar {
+  background-color: var(--primary-color);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.logo {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.navlinks {
+  display: flex;
+  a {
+    color: #fff;
+    margin: 5px 10px;
+    position: relative;
+    &:hover::before {
+      width: 107%;
+      visibility: visible;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      transform: translateY(4px);
+      background-color: #fff;
+      transition: all 0.3s ease-in-out;
+      visibility: hidden;
+    }
+  }
+}
+
+.button {
+  padding: 5px 10px;
+}
+
+.primary {
+  background-color: var(--primary-color-light);
+  color: #fff;
+  border-radius: 7px;
+}
+
+.secondary {
+  background-color: unset;
+  border: 2px solid var(--primary-color-light);
+  color: var(--primary-color-light);
+  border-radius: 7px;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: var(--primary-color-extra-light);
+  }
+}
+
+.header {
+  padding: 5rem 3rem;
+}
+
+.geturl {
+  display: flex;
+  justify-content: space-between;
+  .secondary {
+    font-size: 20px;
+  }
+}
+
+#url {
+  border-bottom: 3px solid var(--background-light);
+  background-color: unset;
+  width: 100%;
+  margin-right: 20px;
+  font-size: 20px;
+  color: var(--primary-color-light);
+  transition: all 0.3s ease-in-out;
+  &:focus {
+    border-bottom: 3px solid var(--primary-color-light);
+    outline: none;
+    &::placeholder {
+      color: var(--primary-color-light);
+    }
+  }
+}
